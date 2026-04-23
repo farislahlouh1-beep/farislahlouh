@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Determination</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">High Determination</a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+        <li><a href="articles.html" class="nav__link">Articles</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+      <button class="nav__menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">&#9776;</button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="articles.html" class="nav__link">Articles</a>
+      <a href="#about" class="nav__link">About</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">Welcome to High Determination</p>
+      <h1 class="hero__title">Fuel Your Drive.<br />Own Your Journey.</h1>
+      <p class="hero__subtitle">
+        Practical insights, raw motivation, and real stories to help you push past limits and build the life you're after.
+      </p>
+      <div class="hero__cta">
+        <a href="articles.html" class="btn btn--primary">Read Articles</a>
+        <a href="#featured" class="btn btn--ghost">See What's New</a>
+      </div>
+    </div>
+    <div class="hero__backdrop" aria-hidden="true"></div>
+  </header>
+
+  <!-- Daily Quote -->
+  <section class="quote-band">
+    <div class="container">
+      <blockquote class="quote-band__quote" id="dailyQuote">
+        <span class="quote-band__mark">&ldquo;</span>
+        <span class="quote-band__text">The secret of getting ahead is getting started.</span>
+        <footer class="quote-band__author">&mdash; Mark Twain</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Featured Articles</h2>
+        <a href="articles.html" class="section__link">View all &rarr;</a>
+      </div>
+      <div class="articles-grid" id="featuredGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Browse by Topic</h2>
+      <div class="topics-grid">
+        <a href="articles.html?topic=mindset" class="topic-card">
+          <span class="topic-card__icon">&#129504;</span>
+          <span class="topic-card__label">Mindset</span>
+        </a>
+        <a href="articles.html?topic=discipline" class="topic-card">
+          <span class="topic-card__icon">&#128170;</span>
+          <span class="topic-card__label">Discipline</span>
+        </a>
+        <a href="articles.html?topic=goals" class="topic-card">
+          <span class="topic-card__icon">&#127919;</span>
+          <span class="topic-card__label">Goals</span>
+        </a>
+        <a href="articles.html?topic=resilience" class="topic-card">
+          <span class="topic-card__icon">&#128293;</span>
+          <span class="topic-card__label">Resilience</span>
+        </a>
+        <a href="articles.html?topic=habits" class="topic-card">
+          <span class="topic-card__icon">&#128197;</span>
+          <span class="topic-card__label">Habits</span>
+        </a>
+        <a href="articles.html?topic=success" class="topic-card">
+          <span class="topic-card__icon">&#127775;</span>
+          <span class="topic-card__label">Success</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <h2 class="newsletter__title">Stay in the Fight</h2>
+      <p class="newsletter__sub">Get weekly articles and quotes delivered straight to your inbox. No fluff.</p>
+      <form class="newsletter__form" onsubmit="handleSubscribe(event)">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+      <p class="newsletter__note" id="subscribeMsg" hidden>You're in. Stay determined.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__text">
+        <h2 class="section__title">What Is High Determination?</h2>
+        <p>
+          High Determination is a space for people who refuse to settle. We publish articles, stories, and ideas centered on one belief: that with the right mindset and consistent action, you can achieve anything you set your sights on.
+        </p>
+        <p>
+          Whether you're building a business, working on your fitness, or simply trying to become a better version of yourself — this is your corner of the internet.
+        </p>
+      </div>
+      <div class="about__stat-grid">
+        <div class="stat-card">
+          <span class="stat-card__num">50+</span>
+          <span class="stat-card__label">Articles Published</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">6</span>
+          <span class="stat-card__label">Core Topics</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">1</span>
+          <span class="stat-card__label">Mission: Your Growth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">High Determination</span>
+      <p class="footer__copy">&copy; <span id="year"></span> High Determination. All rights reserved.</p>
+      <nav class="footer__nav">
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/articles-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
