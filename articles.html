@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles &mdash; High Determination</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">High Determination</a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="articles.html" class="nav__link nav__link--active">Articles</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+      </ul>
+      <button class="nav__menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">&#9776;</button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="articles.html" class="nav__link">Articles</a>
+      <a href="index.html#about" class="nav__link">About</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Articles</h1>
+      <p class="page-hero__sub">Ideas and insights to keep you moving forward.</p>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="container filters__inner">
+      <button class="filter-btn filter-btn--active" data-topic="all">All</button>
+      <button class="filter-btn" data-topic="mindset">Mindset</button>
+      <button class="filter-btn" data-topic="discipline">Discipline</button>
+      <button class="filter-btn" data-topic="goals">Goals</button>
+      <button class="filter-btn" data-topic="resilience">Resilience</button>
+      <button class="filter-btn" data-topic="habits">Habits</button>
+      <button class="filter-btn" data-topic="success">Success</button>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="search" id="searchInput" class="search-bar__input" placeholder="Search articles..." oninput="filterArticles()" />
+    </div>
+  </div>
+
+  <!-- Articles Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="articles-grid articles-grid--full" id="articlesGrid">
+        <!-- Populated by JS -->
+      </div>
+      <p class="no-results" id="noResults" hidden>No articles found. Try a different search or topic.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">High Determination</span>
+      <p class="footer__copy">&copy; <span id="year"></span> High Determination. All rights reserved.</p>
+      <nav class="footer__nav">
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/articles-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
